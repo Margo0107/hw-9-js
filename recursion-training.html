@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recursion training</title>
+  </head>
+  <body></body>
+  <script>
+    function countDown(n) {
+      if (n === 0) {
+        return;
+      }
+      console.log(n);
+      countDown(n - 1);
+    }
+    countDown(5);
+  </script>
+</html>

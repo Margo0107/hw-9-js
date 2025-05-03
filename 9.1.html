@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.1</title>
+  </head>
+  <body></body>
+  <script>
+    function sumSalaries(departament) {
+      if (Array.isArray(departament)) {
+        return departament.reduce((total, person) => total + person.salary, 0);
+      } else {
+        let sum = 0;
+        for (let subDep of Object.values(departament)) {
+          sum += sumSalaries(subDep);
+        }
+        return sum;
+      }
+    }
+    let company = {
+      sales: [
+        { name: "john", salary: 1000 },
+        { name: "Alice", salary: 600 },
+      ],
+      development: {
+        web: [
+          { name: "Peter", salary: 2000 },
+          { name: " Alex", salary: 1800 },
+        ],
+        internals: [{ name: "Jack", salary: 1300 }],
+      },
+    };
+    console.log(sumSalaries(company));
+  </script>
+</html>
